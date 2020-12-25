@@ -12,6 +12,8 @@ void	ft_print_reverse_alphabet(void)
 	}
 }
 
+// Don't copy the text below in your repository!
+
 int	main(void)
 {
 	ft_print_reverse_alphabet();

@@ -12,7 +12,7 @@ void	ft_print_numbers(void)
 		}
 }
 
-//Don't copy this text below in your repository!
+//Don't copy the text below in your repository!
 
 int	main(void)
 {
