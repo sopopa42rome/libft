@@ -35,6 +35,8 @@ void	ft_print_comb(void)
 	}
 }
 
+// Don't copy the text below in your repository!
+
 int	main(void)
 {
 	ft_print_comb();
