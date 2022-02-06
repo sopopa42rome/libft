@@ -6,13 +6,13 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 06:48:37 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/06 20:12:05 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/06 23:47:06 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1) // salva una copia della stringa
+char	*ft_strdup(const char *s1)
 {
 	void	*ptr;
 	size_t	len;

@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:08:30 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/06 07:21:34 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/06 23:06:11 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t num_elements, size_t size);
 char	*ft_strdup(const char *s1);
-//char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *string, unsigned int start, size_t len);
 
 #endif
