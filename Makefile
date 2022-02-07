@@ -6,7 +6,7 @@
 #    By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 17:05:02 by sopopa            #+#    #+#              #
-#    Updated: 2022/02/06 23:51:07 by sopopa           ###   ########.fr        #
+#    Updated: 2022/02/07 01:32:53 by sopopa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS = ft_isalnum.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_substr.c	\
+	ft_strjoin.c \
 
 FLAGS = -Wall -Werror -Wextra -c
 CC = gcc

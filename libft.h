@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:08:30 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/06 23:06:11 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/07 00:10:59 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t num_elements, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *string, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

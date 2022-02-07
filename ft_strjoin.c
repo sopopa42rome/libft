@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 17:48:43 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/07 01:29:58 by sopopa           ###   ########.fr       */
+/*   Created: 2022/02/07 00:10:28 by sopopa            #+#    #+#             */
+/*   Updated: 2022/02/07 01:33:56 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len;
+	char	*ptr;
+	size_t	i;
+	size_t	j;
 
-	len = 0;
-	while (str[len] != '\0')
+	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	ptr = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		len++;
+		ptr[i] = s1[i];
+		i++;
 	}
-	return (len);
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		ptr[i] = s2[j];
+		i++;
+		j++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
