@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:07:20 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/08 19:41:57 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/13 20:55:55 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,32 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr;
-	size_t	i;
-	size_t	j;
-	size_t	k;
-
+	size_t	start;
+	size_t	end;
 	if (!s1)
 		return (NULL);
-	ptr = (char *)(sizeof(char) * (ft_strlen(s1) - ft_strlen(set) + 1));
+	if (!set)
+		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1);
+	while ((s1 + start) == ft_strchr(set, s1[start]))
+		start++;
+	while ((s1 + end - 1) == ft_strrchr(set, s1[end - 1]))
+		end--;
+	ptr = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!ptr)
 		return (NULL);
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s1[i] != set[j])
-	{	
-		 (s1[i] == set[j])
-		{
-			j++;
-		}
-		ptr[k] = s1[i];
-		k++;
-		i++;
-	}
+	ptr = ft_substr(s1, start, end);
 	return (ptr);
 }
 
-int main(void)
-{
-	char arr[] = "Sorin!";
-	printf("%s", ft_strtrim(arr, "!"));
 
-}
+	
+	
+
+// int main(void)
+// {
+// 	char arr[] = "Sorin!";
+// 	printf("%s", ft_strtrim(arr, "or"));
+// }
+ 

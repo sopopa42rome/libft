@@ -6,13 +6,11 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 22:25:37 by sopopa            #+#    #+#             */
-/*   Updated: 2022/01/26 21:00:45 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/13 14:18:54 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memmove(void *dest, const void *srcs, size_t len)
 {
