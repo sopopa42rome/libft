@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:07:20 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/14 12:56:35 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/15 18:03:42 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	ptr = ft_substr(s1, start, end - start);
 	return (ptr);
-	printf("%zu", start);
 }

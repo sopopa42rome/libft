@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:59:21 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/14 14:56:00 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/16 17:36:01 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,46 @@ static size_t	ft_count_words(char const *s, char c)
 	return (words);
 }
 
+static size_t	get_length_word(const char *s, int pos, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[pos])
+	{
+		if (s[pos] == c)
+			return (len);
+		len++;
+		pos++;
+	}
+	return (len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**table;
-	int		x;
-	int		y;
+	size_t	row;
+	size_t	i;
 	int		index;
-	
-	x = 0;
-	y = 0;
-	index = 0;
-	if (!s || (!(table = malloc(sizeof(char) * ft_count_words(s, c) + 1)
+
+	if (!s)
 		return (NULL);
-	while (s[x])
+	table = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!table)
+		return (NULL);
+	row = 0;
+	i = 0;
+	while (s[i])
 	{
-		if (s[x] != c)
-			x++;
+		if (s[i] != c)
+		{
+			index = i;
+			table[row++] = ft_substr(s, index, get_length_word(s, index, c));
+			i += get_length_word(s, index, c);
+		}
+		else
+			i++;
 	}
-	
-
-}
-
-int main(void)
-{
-	char arr[] = "  1 2 3 4 4 5 6 7 7 8 8 9       ";
-	printf("%zu", ft_count_words(arr, ' '));
+	table[row] = NULL;
+	return (table);
 }
