@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:59:21 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/17 16:47:20 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/20 04:43:46 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,3 @@ char	**ft_split(char const *s, char c)
 	table[row] = NULL;
 	return (table);
 }
-
