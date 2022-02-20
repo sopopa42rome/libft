@@ -6,12 +6,11 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 18:49:13 by sopopa            #+#    #+#             */
-/*   Updated: 2022/01/23 19:31:20 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/02/20 21:43:47 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_bzero(void *str, size_t len)
 {
