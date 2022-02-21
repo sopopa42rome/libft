@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 01:25:21 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/21 00:46:33 by sopopa           ###   ########.fr       */
+/*   Created: 2022/02/21 03:48:48 by sopopa            #+#    #+#             */
+/*   Updated: 2022/02/21 04:56:42 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	int	i;
+	char	c;
 
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
+	if (nb == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
 	{
-		if (str[i] == c)
+		if (nb < 0)
 		{
-			return ((char *)(str + i));
+			c = '-';
+			write(fd, &c, 1);
+			nb *= -1;
+			ft_putnbr_fd(nb, fd);
 		}
-		i++;
+		else if (nb < 10)
+		{
+			c = nb + '0';
+			write(fd, &c, 1);
+		}
+		else
+		{
+			ft_putnbr_fd(nb / 10, fd);
+			c = (nb % 10) + '0';
+			write(fd, &c, 1);
+		}
 	}
-	if (str[i] == c)
-	{
-		return ((char *)(str + i));
-	}
-	return (NULL);
 }
