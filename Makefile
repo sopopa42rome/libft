@@ -6,7 +6,7 @@
 #    By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 17:05:02 by sopopa            #+#    #+#              #
-#    Updated: 2022/03/02 18:37:54 by sopopa           ###   ########.fr        #
+#    Updated: 2022/03/05 05:16:25 by sopopa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,12 @@ SRCS = ft_isalnum.c \
 	ft_putnbr_fd.c \
 	ft_lstnew.c \
 	ft_lstadd_front.c \
-	ft_lstsize.c
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstmap.c
 
 FLAGS = -Wall -Werror -Wextra -c
 CC = gcc
