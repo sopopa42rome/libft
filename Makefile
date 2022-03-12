@@ -6,7 +6,7 @@
 #    By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 17:05:02 by sopopa            #+#    #+#              #
-#    Updated: 2022/03/05 05:16:25 by sopopa           ###   ########.fr        #
+#    Updated: 2022/03/08 20:05:16 by sopopa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,19 +44,22 @@ SRCS = ft_isalnum.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
-	ft_lstnew.c \
+	ft_putnbr_fd.c 
+
+FLAGS = -Wall -Werror -Wextra -c
+CC = gcc
+OBJS = $(SRCS:.c=.o)
+BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
 	ft_lstdelone.c \
 	ft_lstiter.c \
-	ft_lstmap.c
-
-FLAGS = -Wall -Werror -Wextra -c
-CC = gcc
-OBJS = $(SRCS:.c=.o)
+	ft_lstmap.c \
+	ft_lstclear.c
+	
+OBJS_BONUS = $(BONUS:.c=.o)
 
 $(NAME):
 	$(CC) $(FLAGS) $(SRCS)
@@ -68,3 +71,6 @@ clean:
 fclean:		clean
 	rm -f $(NAME)
 re: fclean all
+bonus:
+	$(CC) $(FLAGS) $(BONUS)
+	ar rcs libft.a $(OBJS_BONUS)

@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 05:02:43 by sopopa            #+#    #+#             */
-/*   Updated: 2022/03/05 05:04:59 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/03/12 17:44:58 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *t;
-	t_list *tmp;
+	t_list	*t;
+	t_list	*tmp;
 
 	t = *lst;
 	while (t)
