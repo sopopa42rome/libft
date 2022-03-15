@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 07:12:24 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/06 23:51:57 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/03/15 15:28:43 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_substr(char const *string, unsigned int start, size_t len)
 
 	if (!string)
 		return (NULL);
-	if ((size_t)start > ft_strlen(string))
-		return (ft_strdup(""));
+	if (start >= ft_strlen(string))
+		start = ft_strlen(string);
+	if ((start + len) >= ft_strlen(string))
+		len = ft_strlen(string) - start;
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
