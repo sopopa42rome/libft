@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:47:43 by sopopa            #+#    #+#             */
-/*   Updated: 2022/02/21 00:45:56 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/03/17 18:53:39 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_convert_negative(int n)
 
 	i = check_length_int(-n);
 	str = ft_calloc(i + 2, sizeof(*str));
+	if (!str)
+		return (ft_strdup(""));
 	a = -n;
 	while (i > 0)
 	{
@@ -56,6 +58,8 @@ char	*ft_itoa(int n)
 	else
 	{	
 		str = ft_calloc(check_length_int(n) + 1, sizeof(*str));
+		if (!str)
+			return (ft_strdup(""));
 		i = check_length_int(n);
 		while (i > 0)
 		{

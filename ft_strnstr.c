@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 03:49:57 by sopopa            #+#    #+#             */
-/*   Updated: 2022/03/17 16:38:40 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/03/17 17:07:04 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,20 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	int		j;
-	int		a;
+	int	i;
+	int	j;
 
-	i = 0;
-	j = 0;
-	a = ft_strlen(needle);
-	if (a == 0 || needle == 0)
+	i = -1;
+	if (*needle == '\0' || needle == NULL)
 		return ((char *)haystack);
-	while (haystack[i] != '\0' && i < len)
+	if ((int)len == -1)
+		len = ft_strlen(haystack);
+	while (haystack[++i] != '\0' && i < (int)len)
 	{
-		while (haystack[i] != needle[j] && haystack[i] != '\0' && i < len)
-			i++;
-		while (haystack[i] == needle[j] && haystack[i] != '\0' && i < len)
-		{
-			i++;
-			j++;
-		}
-		if (j == a)
-			return ((char *)haystack + i - j);
-		else
-			j = 0;
+		j = -1;
+		while (i + (++j) < (int)len && needle[j] == haystack[i + j])
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
 	}
-	return (0);
+	return (NULL);
 }
